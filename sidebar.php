@@ -67,11 +67,8 @@
 							</div>
 						</div>
 
-						<div class="publicidad">
-							<a href="#" class="anuncio">
-								<img src="./assets/img/ad.png" alt="" />
-								<p class="leyenda">Publicidad</p>
-							</a>
+						<!-- con esto llamo a la funcion de functions.php para cargar la sidebar que configure en wordpress -->
+						<?php dynamic_sidebar('sidebar'); ?>
 						</div>
 					</div>
 				</aside>
