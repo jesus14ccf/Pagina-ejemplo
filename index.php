@@ -110,6 +110,7 @@
 					?>
 					<a href="<?php the_permalink(); ?>" class="card">
 						<div class="thumb">
+							<!-- para cargar la imagen que en WP tiene el posts -->
 							<img src="<?php the_post_thumbnail(); ?>" alt="" />
 						</div>
 						<div class="info">
@@ -162,12 +163,8 @@
 						<?php endif; ?>
 						
 					</div>
-					<div class="anuncios">
-						<a href="#" class="anuncio">
-							<img src="./assets/img/banner.png" alt="" />
-							<p class="leyenda">Publicidad</p>
-						</a>
-					</div>
+					<!-- aqui llamamos a la seccion de abajo, que esta en functions.php -->
+					<?php dynamic_sidebar('after-posts'); ?>  
 				</section>
 				<?php get_sidebar();?>
 			</div>

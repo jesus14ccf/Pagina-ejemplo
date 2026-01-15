@@ -11,9 +11,28 @@
 		/>
 		<link rel="stylesheet" href="<?php echo get_theme_file_uri('css/normalize.css')?>" />
 		<link rel="stylesheet" href="<?php echo get_theme_file_uri('css/estilos.css')?>" />
+		
+		<!-- para single.php hay que cargar los estilos de esta forma, para meter codigo html entre medias del php hay que cerrarlo y abrirlo luego otra vez -->
+		<?php if(is_single() || is_page() ) { ?>
+			<link rel="stylesheet" href="<?php echo get_theme_file_uri('css/single.css')?>" />
+		<?php } ?>
+
 
 		<script src="<?php echo get_theme_file_uri('main.js')?>" defer></script>
-		<title><?php echo get_bloginfo('name')?></title>
+		
+		<title>
+			
+			<?php if(is_home()) { 
+				echo get_bloginfo('name');
+			} else if (is_single()) {
+				echo the_title();
+			} else {
+				echo get_bloginfo('name');
+			}
+			
+			?>
+
+		</title>
         <?php wp_head(); ?>
 	</head>
 	<body>

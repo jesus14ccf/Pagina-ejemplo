@@ -2,23 +2,25 @@
 			<div class="contenedor">
 				<div class="widgets">
 					<div class="logo">
-						<img src="./assets/logo.svg" alt="Logo de Vision" />
+						<!-- para que te lleve a la pagina de inicio utilizo bloginfo -->
+						<a href="<?php bloginfo('url'); ?>">
+							<!-- asi cargo imagenes que estan dentro del tema de wordpress -->
+						<img src="<?php echo get_theme_file_uri('assets/logo.svg'); ?>" alt="Logo de Vision" />
+						</a>
 					</div>
 					<div class="enlaces">
-						<ul>
-							<li><a href="#">Acerca de vision</a></li>
-							<li><a href="#">Trabajos</a></li>
-							<li><a href="#">Media</a></li>
-							<li><a href="#">Contacto</a></li>
-						</ul>
+						<!-- asi llamamos al menu -->
+						<?php wp_nav_menu(array(
+							'container' => false,
+							# localizamos el menu del tema en wp poniendole su nombre
+							'theme_location' => 'menu-footer-1' 
+						)); ?>
 					</div>
 					<div class="enlaces">
-						<ul>
-							<li><a href="#">Newsletter</a></li>
-							<li><a href="#">Eventos</a></li>
-							<li><a href="#">Ayuda</a></li>
-							<li><a href="#">Publicidad</a></li>
-						</ul>
+						<?php wp_nav_menu(array(
+							'container' => false,
+							'theme_location' => 'menu-footer-2'
+						)); ?>
 					</div>
 					<div class="redes-sociales">
 						<div class="redes">
